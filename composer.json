@@ -1,0 +1,23 @@
+{
+    "name": "bramwillemse/brw-architecture",
+    "type": "wordpress-plugin",
+    "license": "GPLv3",
+    "description": "WordPress setup for Bram Willemse",
+    "keywords": ["wordpress", "plugin"],
+    "homepage": "https://github.com/bramwillemse/brw-architecture",
+    "authors": [
+        {
+            "name": "Bram Willemse",
+            "email": "contact@bramwillemse.nl",
+            "homepage": "https://www.bramwillemse.nl"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "classmap": [
+            "classes/"
+        ]
+    }
+}
