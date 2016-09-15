@@ -25,15 +25,14 @@ class siteSetup {
 		global $menu;
 		$restricted = array(
 			// __('Dashboard'),
-			__('Posts'), 
+			// __('Posts'), 
 			// __('Media'), 
-			// __('Links'), 
 			// __('Pages'), 
 			// __('Appearance'), 
 			// __('Tools'), 
 			// __('Users'), 
 			// __('Settings'),
-			__('Comments')
+			// __('Comments')
 			// __('Plugins')
 		);
 		end ($menu);
@@ -80,4 +79,3 @@ class siteSetup {
 	    $menu[10][0] = 'Images &amp; Docs'; // Change Media to Images
 	}
 }
-?>

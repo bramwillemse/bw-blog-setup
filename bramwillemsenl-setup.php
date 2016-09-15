@@ -11,4 +11,4 @@
 require_once( 'vendor/autoload.php' );
 
 $siteSetup = new siteSetup();
-?>
+$postTypes = new postTypes();

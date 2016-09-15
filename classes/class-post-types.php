@@ -8,7 +8,7 @@ class postTypes {
 		add_action( 'init', array( &$this, 'websites_post_type' ), 0 );
 		
 		add_filter( 'request', array( &$this, 'my_custom_archive_order'), 0 );
-		add_filter('nav_menu_css_class', array( &$this, 'theme_current_type_nav_class'), 1, 2);
+		add_filter( 'nav_menu_css_class', array( &$this, 'theme_current_type_nav_class' ), 1, 2);
 		add_action( 'admin_head', array( &$this, 'post_type_icons') );
 
 	}
@@ -31,6 +31,7 @@ class postTypes {
 			'not_found'           => __( 'Niet gevonden', 'text_domain' ),
 			'not_found_in_trash'  => __( 'Niet gevonden in prullenbak', 'text_domain' ),
 		);
+
 		$args = array(
 			'label'               => __( 'websites', 'text_domain' ),
 			'rewrite' 			  => array('slug' => 'websites'),
@@ -73,6 +74,7 @@ class postTypes {
 			'not_found'           => __( 'Niet gevonden', 'text_domain' ),
 			'not_found_in_trash'  => __( 'Niet gevonden in prullenbak', 'text_domain' ),
 		);
+
 		$args = array(
 			'label'               => __( 'team', 'text_domain' ),
 			'rewrite' 			  => array('slug' => 'team'),
@@ -93,8 +95,8 @@ class postTypes {
 			'publicly_queryable'  => true,
 			'capability_type'     => 'page',
 		);
-		register_post_type( 'team', $args );
 
+		register_post_type( 'team', $args );
 	}
 
 
@@ -118,17 +120,17 @@ class postTypes {
 	}
 
 	// Highlight post type in nav menu
-	public function add_current_nav_class($classes, $item) {
+	public function add_current_nav_class( $classes, $item ) {
 		
 		// Getting the current post details
 		global $post;
 		
 		// Getting the post type of the current post
-		$current_post_type = get_post_type_object(get_post_type($post->ID));
+		$current_post_type = get_post_type_object(get_post_type( $post->ID ));
 		$current_post_type_slug = $current_post_type->rewrite['slug'];
 			
 		// Getting the URL of the menu item
-		$menu_slug = strtolower(trim($item->url));
+		$menu_slug = strtolower( trim($item->url));
 		
 		// If the menu item URL contains the current post types slug add the current-menu-item class
 		if (strpos($menu_slug,$current_post_type_slug) !== false) {
@@ -165,9 +167,4 @@ class postTypes {
 
 	    return $css_class;
 	}
-
-
 }
-new postTypes; 
-
-?>
