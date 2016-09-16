@@ -3,6 +3,10 @@ class siteSetup {
 
 	# Constructor, uses hooks to integrate functionalities into WordPress
 	public function __construct() {			
+		$this->init();
+	}
+
+	public function init() {
 		# Remove items from dashboard menu
 		add_action( 'admin_menu', array( &$this, 'remove_menu_items' )); 
 
